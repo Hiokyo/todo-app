@@ -1,4 +1,4 @@
-export const Data: Array<string> = [
+export const data: Array<string> = [
     'Racing car sprays burning fuel into crowd. Racing car sprays burning fuel into crowd.',
     'Japanese princess to wed commoner.Racing car sprays burning fuel into crowd.',
     'Australian walks 100km after outback crash.Racing car sprays burning fuel into crowd.',

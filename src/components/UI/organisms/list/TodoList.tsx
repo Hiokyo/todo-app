@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Button, List} from 'antd'
 import './todoList.css'
-import {Data} from '../../../mock-data/data'
+import {data} from '../../../mock-data/data'
 import { useTranslation } from 'react-i18next';
 
 const TodoList: React.FC = () => {
@@ -14,7 +14,7 @@ const TodoList: React.FC = () => {
                 <List
                 className="list"
                 itemLayout="horizontal"
-                dataSource={Data}
+                dataSource={data}
                 renderItem={item => (
                     <List.Item
                     actions={[
