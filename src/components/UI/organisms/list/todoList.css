@@ -1,0 +1,10 @@
+.list-container {
+    width: 100%;
+}
+.list-container h1 {
+    font-size: 2rem;
+}
+.list-container .list-item {
+    max-height: 500px;  
+    overflow: scroll;
+}
