@@ -1,0 +1,4 @@
+.change-language.container {
+   display: flex;
+   justify-content: flex-end;
+}
