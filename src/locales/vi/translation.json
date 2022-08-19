@@ -2,6 +2,8 @@
     "content": {
         "todos": "Việc cần làm",
         "btn-edit": "Sửa",
-        "btn-delete": "Xoá"
+        "btn-delete": "Xoá",
+        "edit-success": "Sửa thành công!",
+        "edit-failure": "Sửa không thành công!"
     }
 }
