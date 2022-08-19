@@ -2,6 +2,8 @@
     "content": {
         "todos": "Todos",
         "btn-edit": "Edit",
-        "btn-delete": "Delete"
+        "btn-delete": "Delete",
+        "edit-success": "Edit successful!",
+        "edit-failure": "Edit failure!"
     }
 }

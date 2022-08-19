@@ -1,5 +1,5 @@
 .list-container {
-    width: 100%;
+    min-width: 600px;
 }
 .list-container h1 {
     font-size: 2rem;
@@ -7,4 +7,13 @@
 .list-container .list-item {
     max-height: 500px;  
     overflow: scroll;
+    display: flex;
+}
+.input {
+    width: 100%;
+    margin: 0 1rem;
+    border: 0;
+}
+.list {
+    width: 100%;
 }
