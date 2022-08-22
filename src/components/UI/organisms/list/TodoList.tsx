@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { actions, useStore } from '../../../../store'
-
 import { List, Checkbox} from 'antd'
-import './todoList.css'
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd'
+import './todoList.css'
 
 const TodoList: React.FC = () => {
   const {state, dispatch} = useStore()
-  const {todos, todoInput } = state
+  const {todos} = state
+  const [name, setName] = useState("")
   const { t } = useTranslation()
 
   const editSuccess = () => {
@@ -29,18 +29,19 @@ const TodoList: React.FC = () => {
           dataSource={todos}
           renderItem={(todos)=> (
             <List.Item>
-              <Checkbox>
+              <Checkbox onClick={ () => {console.log(todos.id);
+              }}>
               </Checkbox>
               <input 
                 className='input' 
                 defaultValue={todos.todo}
                 onChange= {(event => {
-                    dispatch(actions.setTodoInput(event.target.value))
+                    setName(event.target.value)
                 })}
                 onKeyDown= {(event) => {
                   if (event.key === "Enter" || event.key === "Escape") {
-                    if ( todoInput.trim() !== ""){
-                      dispatch(actions.editTodo({ todo: todoInput.trim(), id: todos.id}));
+                    if ( !!name.trim()){
+                      dispatch(actions.editTodo({ todo: name.trim(), id: todos.id}));
                       editSuccess();
                     }
                     else editError();

@@ -1,4 +1,4 @@
-import { EDIT_TODO, SET_TODO_INPUT } from './constants'
+import { ADD_TODO, EDIT_TODO, SET_TODO_INPUT } from './constants'
 
 type InitStateType = {
     todos: Array<any>;
@@ -23,7 +23,12 @@ function reducer(state:any, action:any){
                 ...state,
                 todoInput: action.payload
             }
-
+        case ADD_TODO:
+            const newId = state.todos.length + 1
+            return {
+                ...state,
+                todos: [...state.todos, {id:newId, todo:action.payload}]
+            }
         case EDIT_TODO:
             const newTodo = [...state.todos]
             const item = newTodo.find(todo => todo.id === action.payload.id)

@@ -1,8 +1,12 @@
 {
     "content": {
         "todos": "Việc cần làm",
+        "add-placeholder": "Thêm việc cần làm...",
         "btn-edit": "Sửa",
         "btn-delete": "Xoá",
+        "btn-add": "Thêm",
+        "add-success": "Thêm thành công!",
+        "add-failure": "Thêm không thành công!",
         "edit-success": "Sửa thành công!",
         "edit-failure": "Sửa không thành công!"
     }
