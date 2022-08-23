@@ -1,6 +1,6 @@
 import './App.css'
 
-import AddTodo from './components/UI/molecules/add-todo/addTodo'
+import AddTodo from './components/UI/molecules/add-todo/AddTodo'
 import TodoList from './components/UI/organisms/list/TodoList'
 import ChangeLanguage from './components/UI/molecules/multi-language/ChangeLanguage'
 
