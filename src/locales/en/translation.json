@@ -1,13 +1,25 @@
 {
     "content": {
         "todos": "Todos",
-        "btn-edit": "Edit",
-        "btn-delete": "Delete",
-        "btn-add": "Add",
-        "add-placeholder": "Enter new task...",
-        "add-success": "Add successful!",
-        "add-failure": "Add failure!",
-        "edit-success": "Edit successful!",
-        "edit-failure": "Edit failure!"
+        "btn": {
+            "edit": "Edit",
+            "delete": "Delete",
+            "add": "Add"
+        },
+        "add": {
+            "placeholder": "Enter new task...",
+            "success": "Add successful!",
+            "failure": "Add failure!"
+        },
+        "edit": {
+            "success": "Edit successful!",
+            "failure": "Edit failure!"
+        },
+
+        "tag": {
+            "individual": "Individual",
+            "work": "Work",
+            "other": "Other..."
+        }
     }
 }

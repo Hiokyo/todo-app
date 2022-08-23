@@ -1,13 +1,26 @@
 {
     "content": {
         "todos": "Việc cần làm",
-        "add-placeholder": "Thêm việc cần làm...",
-        "btn-edit": "Sửa",
-        "btn-delete": "Xoá",
-        "btn-add": "Thêm",
-        "add-success": "Thêm thành công!",
-        "add-failure": "Thêm không thành công!",
-        "edit-success": "Sửa thành công!",
-        "edit-failure": "Sửa không thành công!"
+        
+        "btn": {
+            "edit": "Sửa",
+            "delete": "Xoá",
+            "add": "Thêm"
+        },
+        "add": {
+            "placeholder": "Thêm việc cần làm...",
+            "success": "Thêm thành công!",
+            "failure": "Thêm không thành công!"
+        },
+        "edit": {
+            "success": "Sửa thành công!",
+            "failure": "Sửa không thành công!"
+        },
+
+        "tag": {
+            "individual": "Cá nhân",
+            "work": "Công việc",
+            "other": "Khác..."
+        }
     }
 }

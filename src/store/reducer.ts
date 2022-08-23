@@ -1,19 +1,16 @@
-import { ADD_TODO, EDIT_TODO, SET_TODO_INPUT } from './constants'
+import { ADD_TODO, EDIT_TODO, SET_TODO_INPUT, SET_TAG_INPUT } from './constants'
 
 type InitStateType = {
     todos: Array<any>;
     todoInput: string;
+    tagInput: string;
 }
 
+const initialTodos = JSON.parse(localStorage.getItem("todo") ?? '') ?? []
 const initState: InitStateType = {
-    todos: [
-        {id: 1, todo: "Pay bills"},
-        {id: 2, todo: "Buy eggs"},
-        {id: 3, todo: "Hit the gym"},
-        {id: 4, todo: "Read a book"},
-        {id: 5, todo: "Organize office"}
-    ],
+    todos: initialTodos,
     todoInput: "",
+    tagInput: ""
 }
 
 function reducer(state:any, action:any){
@@ -23,11 +20,16 @@ function reducer(state:any, action:any){
                 ...state,
                 todoInput: action.payload
             }
+        case SET_TAG_INPUT:
+            return {
+                ...state,
+                tagInput: action.payload
+            }
         case ADD_TODO:
             const newId = state.todos.length + 1
             return {
                 ...state,
-                todos: [...state.todos, {id:newId, todo:action.payload}]
+                todos: [...state.todos, {id:newId, todo:action.payload.todos, tags:action.payload.tags}]
             }
         case EDIT_TODO:
             const newTodo = [...state.todos]

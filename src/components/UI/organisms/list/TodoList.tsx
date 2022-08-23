@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 import { actions, useStore } from '../../../../store'
 import { List, Checkbox} from 'antd'
@@ -8,16 +8,26 @@ import './todoList.css'
 
 const TodoList: React.FC = () => {
   const {state, dispatch} = useStore()
-  const {todos} = state
+  const {todos, tagInput} = state
   const [name, setName] = useState("")
+
   const { t } = useTranslation()
 
+  function filterItems(arr:Array<any>, query:string) {
+    if(tagInput === ""){
+      return arr;
+    }
+    return arr.filter((el) => el.tags.toLowerCase().includes(query.toLowerCase()));
+  }
+
+  const filteredTodos = useMemo(() => filterItems(todos, tagInput), [tagInput, todos])
+
   const editSuccess = () => {
-    message.success(t('content.edit-success'));
+    message.success(t('content.edit.success'));
   };
   
   const editError = () => {
-    message.error(t('content.edit-failure'));
+    message.error(t('content.edit.failure'));
   };
   return (
     <div className='list-container'>
@@ -26,7 +36,7 @@ const TodoList: React.FC = () => {
           <List
           className="list"
           itemLayout="horizontal"
-          dataSource={todos}
+          dataSource={filteredTodos}
           renderItem={(todos)=> (
             <List.Item>
               <Checkbox onClick={ () => {console.log(todos.id);
@@ -34,7 +44,7 @@ const TodoList: React.FC = () => {
               </Checkbox>
               <input 
                 className='input' 
-                defaultValue={todos.todo}
+                value={todos.todo}
                 onChange= {(event => {
                     setName(event.target.value)
                 })}
